@@ -4,9 +4,9 @@ Gem::Specification.new do |s|
   s.name = 'balboa_worldwide_app'
   s.version = BWA::VERSION
   s.platform = Gem::Platform::RUBY
-  s.authors = ["Cody Cutrer"]
-  s.email = "cody@cutrer.com'"
-  s.homepage = "https://github.com/ccutrer/bwa"
+  s.authors = ["Jim Shank"]
+  s.email = "jim.shank@gmail.com"
+  s.homepage = "https://github.com/jshank/balboa_worldwide_app"
   s.summary = "Library for communication with Balboa Water Group's WiFi module or RS-485"
   s.license = "MIT"
 
