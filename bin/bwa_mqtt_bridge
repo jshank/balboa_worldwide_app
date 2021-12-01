@@ -592,7 +592,7 @@ class MQTTBridge
   end
 end
 
-mqtt_uri = ARGV.shift
+mqtt_uri = URI.escape(ARGV.shift)
 
 if ARGV.empty?
   spas = BWA::Discovery.discover
