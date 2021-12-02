@@ -262,8 +262,15 @@ class MQTTBridge
   end
 
   def publish_hass_discovery_pumps(i, speeds)
-    publish_hass_entity(type: "switch", name: "Pump #{i}", subtopic: "pump#{i}", payload_on: "toggle", 
-      payload_off: "toggle", state_on: "2", state_off: "0",icon: "mdi:chart-bubble")
+    if speeds == 1
+      publish_hass_entity(type: "switch", name: "Pump #{i}", subtopic: "pump#{i}", payload_on: "toggle", 
+        payload_off: "toggle", state_on: "2", state_off: "0",icon: "mdi:chart-bubble")
+      elsif speeds == 2
+      publish_hass_entity(type: "select", name: "Pump #{i}", subtopic: "pump#{i}", options:["0","1","2"],
+        icon: "mdi:chart-bubble")
+      else
+        BWA.logger.warn "Unable to create pump#{i} due to speeds > 2. Speeds: #{speed}"
+    end
   end
 
   def publish_hass_discovery_things(type, i)
