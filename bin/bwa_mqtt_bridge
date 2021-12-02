@@ -265,7 +265,7 @@ class MQTTBridge
     if speeds == 1
       publish_hass_entity(type: "switch", name: "Pump #{i}", subtopic: "pump#{i}", payload_on: "toggle", 
         payload_off: "toggle", state_on: "2", state_off: "0",icon: "mdi:chart-bubble")
-      elsif speeds == 2
+    elsif speeds == 2
       publish_hass_entity(type: "select", name: "Pump #{i}", subtopic: "pump#{i}", options:["0","1","2"],
         icon: "mdi:chart-bubble")
       else
